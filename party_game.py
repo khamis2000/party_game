@@ -25,11 +25,11 @@ class Player:
         self.isAssassin = False
 
     def visitPlaces(self, places):
-        num_places_to_visit = min(len(places), random.randint(1, 3))  # Ensure not to sample more than available
+        num_places_to_visit = min(len(places), random.randint(1, 3))  
         self.lastVisitedPlaces = random.sample(places, num_places_to_visit)
 
     def chooseFavoriteWeapons(self, weapons):
-        num_weapons_to_choose = min(len(weapons), random.randint(1, len(weapons)))  # Ensure not to sample more than available
+        num_weapons_to_choose = min(len(weapons), random.randint(1, len(weapons)))  
         self.favoriteWeapons = random.sample(weapons, num_weapons_to_choose)
 
     def suspectPlayers(self, players):
@@ -93,7 +93,7 @@ def main():
         config = load_configuration(config_path)
         places = config["places"]
         weapons = config["weapons"]
-        num_players = 5  # This could be made configurable through input or config
+        num_players = 5  
 
         game = Game(places, weapons, num_players)
         game.play()
